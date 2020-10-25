@@ -1,0 +1,38 @@
+<!doctype html>
+<html  lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello, world!</title>
+	<script>
+			function validateForm() {
+			  var user = document.forms["myForm"]["user"].value;
+			  if (user == "") {
+				alert("debe agregar un usuario");
+				return false;
+			  }
+				if (!user.includes("@")) {
+					alert("El usuario debe tener al menos un @");
+					return false;
+				}
+			  
+			  var pass = document.forms["myForm"]["password"].value;
+			  if (pass == "") {
+				alert("debe agregar un password");
+				return false;
+			  }
+			  return true;
+			}
+
+		</script>
+  </head>
+	<body>
+		<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+			Usuario: <input type="text" name="user"><br>
+			Password: <input type="password" name="password"><br>
+			<input type="submit" value="Submit">
+		</form>
+	
+	</body>
+</html>
